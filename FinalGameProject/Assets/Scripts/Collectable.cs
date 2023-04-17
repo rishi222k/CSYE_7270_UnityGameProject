@@ -6,12 +6,11 @@ public class Collectable : MonoBehaviour
 {
     enum ItemType { Coin, Health, Key, Shard } //Creates an ItemType enum (drop down)
     [SerializeField] private ItemType itemType;
-    NewPlayer newPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        newPlayer = GameObject.Find("Player").GetComponent<NewPlayer>();
+   
     }
 
     // Update is called once per frame
@@ -28,20 +27,20 @@ public class Collectable : MonoBehaviour
             switch (itemType)
             {
                 case ItemType.Coin:
-                    newPlayer.coinsCollected += 1;
+                    NewPlayer.Instance.coinsCollected += 1;
                     break;
                 case ItemType.Health:
-                    newPlayer.health = Mathf.Min(newPlayer.health + 20, 100);
+                    NewPlayer.Instance.health = Mathf.Min(NewPlayer.Instance.health + 20, 100);
                     break;
                 case ItemType.Key:
-                    newPlayer.keysCollected += 1;
+                    NewPlayer.Instance.keysCollected += 1;
                     break;
                 case ItemType.Shard:
-                    newPlayer.shardsCollected += 1;
+                    NewPlayer.Instance.shardsCollected += 1;
                     break;
             }
 
-            newPlayer.UpdateUI();
+            NewPlayer.Instance.UpdateUI();
             Destroy(gameObject);
         }
     }
