@@ -7,6 +7,10 @@ public class NewPlayer : PhysicsObject
 {
     [SerializeField] private float maxSpeed = 1;
     [SerializeField] private float jumpPower = 10;
+    [SerializeField] private float attackDuration;
+    [SerializeField] private GameObject attackBox;
+
+    public int attackPower = 25;
     private int jumpsRemaining = 1;
     public int coinsCollected;
     public int shardsCollected;
@@ -55,7 +59,32 @@ public class NewPlayer : PhysicsObject
             jumpsRemaining--;
         }
 
+        //Flip the player's localScale.x if the move speed is greater than .01 or less than -.01
+        if (targetVelocity.x < -.01)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else if (targetVelocity.x > .01)
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
+
+        //If we press "Fire1", then set the attackBox to active. Otherwise, set active to false
+        if (Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(ActivateAttack());
+        }
+
     }
+
+    //Activate Attack Function
+    public IEnumerator ActivateAttack()
+    {
+        attackBox.SetActive(true);
+        yield return new WaitForSeconds(attackDuration);
+        attackBox.SetActive(false);
+    }
+
     //Update UI elements
     public void UpdateUI()
     {
