@@ -4,30 +4,14 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    enum ItemType { Coin, Health, Ammo } //Creates an ItemType enum (drop down)
+    enum ItemType { Coin, Health, Key, Shard } //Creates an ItemType enum (drop down)
     [SerializeField] private ItemType itemType;
+    NewPlayer newPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        //If I'm a coin, print to the console "I'm a coin"
-
-        if (itemType == ItemType.Coin)
-        {
-            Debug.Log("I'm a coin!");
-        }
-        else if (itemType == ItemType.Health)
-        {
-            Debug.Log("I'm health!");
-        }
-        else if (itemType == ItemType.Ammo)
-        {
-            Debug.Log("I'm ammo!");
-        }
-        else
-        {
-            Debug.Log("I'm an inventory item!");
-        }
+        newPlayer = GameObject.Find("Player").GetComponent<NewPlayer>();
     }
 
     // Update is called once per frame
@@ -38,11 +22,32 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //If the player is touching me, print "Collect" in the console
+        // If the player is touching me, print "Collect" in the console
         if (collision.gameObject.name == "Player")
         {
-            GameObject.Find("Player").GetComponent<NewPlayer>().coinsCollected += 1;
+            switch (itemType)
+            {
+                case ItemType.Coin:
+                    newPlayer.coinsCollected += 1;
+                    break;
+                case ItemType.Health:
+                    newPlayer.health = Mathf.Min(newPlayer.health + 20, 100);
+                    break;
+                case ItemType.Key:
+                    newPlayer.keysCollected += 1;
+                    break;
+                case ItemType.Shard:
+                    newPlayer.shardsCollected += 1;
+                    break;
+            }
+
+            newPlayer.UpdateUI();
             Destroy(gameObject);
         }
     }
+
+
 }
+
+
+

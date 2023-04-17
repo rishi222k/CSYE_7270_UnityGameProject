@@ -11,7 +11,7 @@ ScriptedImporter:
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -97,12 +97,12 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 23, y: 9, z: 21, w: 9}
     rect:
       serializedVersion: 2
-      x: 2348
+      x: 1201
       y: 2172
-      width: 1133
+      width: 1138
       height: 36
     spriteID: 7c591b7ee75d838469e684a946b8ea43
     spriteBone: []
@@ -113,31 +113,9 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2346, y: 2170}
-    spritePosition: {x: 818, y: 1600}
-  - name: HealthBg2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1205
-      y: 2172
-      width: 1135
-      height: 36
-    spriteID: c88db508ca6c9754697ac36c19f2a553
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 1203, y: 2170}
-    spritePosition: {x: 818, y: 1601}
-  - name: HealthBg1
+    uvTransform: {x: 1204, y: 2170}
+    spritePosition: {x: 805, y: 1511}
+  - name: HealthBg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -148,7 +126,7 @@ ScriptedImporter:
       y: 2172
       width: 1193
       height: 81
-    spriteID: e1a5cd3604109ae4bad7ab09d84f028d
+    spriteID: 89d003424ede6f245b62c2b88a6395f0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -157,8 +135,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2, y: 2170}
-    spritePosition: {x: 790, y: 1579}
+    uvTransform: {x: 4, y: 2172}
+    spritePosition: {x: 792, y: 1581}
   - name: Background Reference
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -194,7 +172,73 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -217,7 +261,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 7c591b7ee75d838469e684a946b8ea43
     layerID: 9
-    mosaicPosition: {x: 2348, y: 2172}
+    mosaicPosition: {x: 1205, y: 2172}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -231,22 +275,12 @@ ScriptedImporter:
     flatten: 0
     isImported: 0
     isVisible: 1
-  - name: HealthBg2
-    spriteName: HealthBg2
+  - name: HealthBg
+    spriteName: HealthBg
     isGroup: 0
     parentIndex: 1
-    spriteID: c88db508ca6c9754697ac36c19f2a553
-    layerID: 7
-    mosaicPosition: {x: 1205, y: 2172}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: HealthBg1
-    spriteName: HealthBg1
-    isGroup: 0
-    parentIndex: 1
-    spriteID: e1a5cd3604109ae4bad7ab09d84f028d
-    layerID: 6
+    spriteID: 89d003424ede6f245b62c2b88a6395f0
+    layerID: 13
     mosaicPosition: {x: 4, y: 2172}
     flatten: 0
     isImported: 1
