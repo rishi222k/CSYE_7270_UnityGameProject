@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NewPlayer : PhysicsObject
@@ -75,6 +76,12 @@ public class NewPlayer : PhysicsObject
             StartCoroutine(ActivateAttack());
         }
 
+        //Check if player health is smaller than or equal to 0.
+        if (health <= 0)
+        {
+            Die();
+        }
+
     }
 
     //Activate Attack Function
@@ -91,4 +98,10 @@ public class NewPlayer : PhysicsObject
         coinsText.text = coinsCollected.ToString();
         healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), healthBar.rectTransform.sizeDelta.y);
     }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
 }
