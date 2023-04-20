@@ -16,11 +16,11 @@ public class NewPlayer : PhysicsObject
     public int coinsCollected;
     public int shardsCollected;
     public int keysCollected;
-    public Text coinsText;
+    //public Text coinsText;
+    //public Image healthBar;
 
     public int maxHealth = 100;
     public int health = 100;
-    public Image healthBar;
     [SerializeField] private Vector2 healthBarOrigSize;
 
     //Singleton instantation
@@ -34,12 +34,21 @@ public class NewPlayer : PhysicsObject
         }
     }
 
+    private void Awake()
+    {
+        if (GameObject.Find("New Player")) Destroy(gameObject);
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        healthBarOrigSize = healthBar.rectTransform.sizeDelta;
+        DontDestroyOnLoad(gameObject);
+        gameObject.name = "New Player";
+
+        healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
+        SetSpawnPosition();
     }
 
     // Update is called once per frame
@@ -95,8 +104,13 @@ public class NewPlayer : PhysicsObject
     //Update UI elements
     public void UpdateUI()
     {
-        coinsText.text = coinsCollected.ToString();
-        healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), healthBar.rectTransform.sizeDelta.y);
+        GameManager.Instance.coinsText.text = coinsCollected.ToString();
+        GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), GameManager.Instance.healthBar.rectTransform.sizeDelta.y);
+    }
+
+    public void SetSpawnPosition()
+    {
+        transform.position = GameObject.Find("SpawnLocation").transform.position;
     }
 
     public void Die()

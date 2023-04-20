@@ -22,7 +22,7 @@ public class Collectable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // If the player is touching me, print "Collect" in the console
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == NewPlayer.Instance.gameObject)
         {
             switch (itemType)
             {
