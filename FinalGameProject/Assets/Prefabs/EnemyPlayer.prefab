@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8282768557304566776}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.9853, y: 9.39, z: 0}
   m_LocalScale: {x: 1.0286, y: 1.0286, z: 1.0286}
   m_ConstrainProportionsScale: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7858555197843390896, guid: 7077c3a3ffd09334f841c556f8a28c13, type: 3}
+  m_Sprite: {fileID: -3355145158761593255, guid: a0529475615bd1a459689c557c4bd851, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.86, y: 2.48}
+  m_Offset: {x: 0, y: 0.23}
+  m_Size: {x: 1.86, y: 2.84}
   m_Direction: 0
 --- !u!50 &8282768557304566775
 Rigidbody2D:
@@ -139,6 +139,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 1
   maxSpeed: 2
+  health: 100
   rayCastLayerMask:
     serializedVersion: 2
     m_Bits: 51

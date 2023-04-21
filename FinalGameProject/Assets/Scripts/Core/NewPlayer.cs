@@ -23,6 +23,12 @@ public class NewPlayer : PhysicsObject
     public int health = 100;
     [SerializeField] private Vector2 healthBarOrigSize;
 
+    public GameObject polygonCameraConfiner;
+    private PolygonCollider2D confinerBounds;
+    private bool sceneReloading = false;
+
+
+
     //Singleton instantation
     private static NewPlayer instance;
     public static NewPlayer Instance
@@ -46,6 +52,8 @@ public class NewPlayer : PhysicsObject
         DontDestroyOnLoad(gameObject);
         gameObject.name = "New Player";
 
+        confinerBounds = polygonCameraConfiner.GetComponent<PolygonCollider2D>();
+
         healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
         SetSpawnPosition();
@@ -55,6 +63,12 @@ public class NewPlayer : PhysicsObject
     void Update()
     {
         targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, 0);
+
+        if (!sceneReloading && !IsPlayerInsideConfiner())
+        {
+            sceneReloading = true;
+            LoadLevel();
+        }
 
         if (grounded)
         {
@@ -117,15 +131,25 @@ public class NewPlayer : PhysicsObject
 
     public void Die()
     {
-        LoadLevel("Level 1");
+        LoadLevel();
     }
 
-    public void LoadLevel(string loadSceneString)
+    public void LoadLevel()
     {
         health = 100;
-        SceneManager.LoadScene(loadSceneString);
+        coinsCollected=0;
+        shardsCollected=0;
+        keysCollected = 0;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         SetSpawnPosition();
         UpdateUI();
+    }
+
+    private bool IsPlayerInsideConfiner()
+    {
+        return confinerBounds.OverlapPoint(transform.position);
     }
 
 }

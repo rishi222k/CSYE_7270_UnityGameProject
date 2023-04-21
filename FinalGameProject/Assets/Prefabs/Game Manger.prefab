@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 3361359732131218546}
+  shardsText: {fileID: 0}
+  keysText: {fileID: 0}
   healthBar: {fileID: 3361359730711844354}
 --- !u!1 &1266249713564025978
 GameObject:

@@ -93,7 +93,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Security Lock
+  - name: Gate
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -541,8 +541,8 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Security Lock
-    spriteName: Security Lock
+  - name: Gate
+    spriteName: Gate
     isGroup: 0
     parentIndex: -1
     spriteID: 90924be283dfc6a4789c45901198f30b
