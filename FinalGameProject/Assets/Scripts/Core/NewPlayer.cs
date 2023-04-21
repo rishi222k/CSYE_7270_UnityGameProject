@@ -10,6 +10,7 @@ public class NewPlayer : PhysicsObject
     [SerializeField] private float jumpPower = 10;
     [SerializeField] private float attackDuration;
     [SerializeField] private GameObject attackBox;
+    [SerializeField] private Animator animator;
 
     public int attackPower = 25;
     private int jumpsRemaining = 1;
@@ -72,7 +73,7 @@ public class NewPlayer : PhysicsObject
 
         if (grounded)
         {
-            jumpsRemaining = 1;
+            jumpsRemaining = 2;
         }
 
 
@@ -100,10 +101,16 @@ public class NewPlayer : PhysicsObject
         }
 
         //Check if player health is smaller than or equal to 0.
-        if (health <= 0)
+        if (health <= 0 && !sceneReloading)
         {
+            sceneReloading = true;
             Die();
         }
+
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetFloat("velocityY", velocity.y);
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("attackDirectionY", Input.GetAxis("Vertical"));
 
     }
 
