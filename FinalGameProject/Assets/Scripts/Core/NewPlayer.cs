@@ -105,6 +105,8 @@ public class NewPlayer : PhysicsObject
     public void UpdateUI()
     {
         GameManager.Instance.coinsText.text = coinsCollected.ToString();
+        GameManager.Instance.shardsText.text = shardsCollected.ToString();
+        GameManager.Instance.keysText.text = keysCollected.ToString();
         GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), GameManager.Instance.healthBar.rectTransform.sizeDelta.y);
     }
 
@@ -115,7 +117,15 @@ public class NewPlayer : PhysicsObject
 
     public void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        LoadLevel("Level 1");
+    }
+
+    public void LoadLevel(string loadSceneString)
+    {
+        health = 100;
+        SceneManager.LoadScene(loadSceneString);
+        SetSpawnPosition();
+        UpdateUI();
     }
 
 }

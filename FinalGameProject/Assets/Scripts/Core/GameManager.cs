@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("References")]
     public Text coinsText;
+    public Text shardsText;
+    public Text keysText;
     public Image healthBar;
 
     //Singleton instantation
