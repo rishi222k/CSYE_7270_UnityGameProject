@@ -105,11 +105,15 @@ public class NewPlayer : PhysicsObject
         {
             Die();
         }
-
+        
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetFloat("velocityY", velocity.y);
         animator.SetBool("grounded", grounded);
         animator.SetFloat("attackDirectionY", Input.GetAxis("Vertical"));
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("jump");
+        }
 
     }
 
