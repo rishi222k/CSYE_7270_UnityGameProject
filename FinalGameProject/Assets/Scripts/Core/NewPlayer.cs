@@ -24,9 +24,9 @@ public class NewPlayer : PhysicsObject
     public int health = 100;
     [SerializeField] private Vector2 healthBarOrigSize;
 
-    public GameObject polygonCameraConfiner;
-    private PolygonCollider2D confinerBounds;
-    private bool sceneReloading = false;
+    //public GameObject polygonCameraConfiner;
+    //private PolygonCollider2D confinerBounds;
+    //private bool sceneReloading = false;
 
 
 
@@ -53,7 +53,7 @@ public class NewPlayer : PhysicsObject
         DontDestroyOnLoad(gameObject);
         gameObject.name = "New Player";
 
-        confinerBounds = polygonCameraConfiner.GetComponent<PolygonCollider2D>();
+        //confinerBounds = polygonCameraConfiner.GetComponent<PolygonCollider2D>();
 
         healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
@@ -65,15 +65,15 @@ public class NewPlayer : PhysicsObject
     {
         targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, 0);
 
-        if (!sceneReloading && !IsPlayerInsideConfiner())
+        /*if (!sceneReloading && !IsPlayerInsideConfiner())
         {
             sceneReloading = true;
             LoadLevel();
-        }
+        }*/
 
         if (grounded)
         {
-            jumpsRemaining = 2;
+            jumpsRemaining = 1;
         }
 
 
@@ -101,9 +101,8 @@ public class NewPlayer : PhysicsObject
         }
 
         //Check if player health is smaller than or equal to 0.
-        if (health <= 0 && !sceneReloading)
+        if (health <= 0)
         {
-            sceneReloading = true;
             Die();
         }
 
@@ -152,11 +151,6 @@ public class NewPlayer : PhysicsObject
 
         SetSpawnPosition();
         UpdateUI();
-    }
-
-    private bool IsPlayerInsideConfiner()
-    {
-        return confinerBounds.OverlapPoint(transform.position);
     }
 
 }

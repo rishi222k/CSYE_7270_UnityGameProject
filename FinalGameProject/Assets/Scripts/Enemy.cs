@@ -7,7 +7,7 @@ public class Enemy : PhysicsObject
     [SerializeField] private float maxSpeed;
     private int direction = 1;
     public int health = 100;
-    private int maxHealth = 100;
+    //private int maxHealth = 100;
 
     private RaycastHit2D rightLedgeRaycastHit;
     private RaycastHit2D leftLedgeRaycastHit;
