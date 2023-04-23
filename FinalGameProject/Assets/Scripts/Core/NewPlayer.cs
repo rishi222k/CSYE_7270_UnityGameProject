@@ -28,7 +28,9 @@ public class NewPlayer : PhysicsObject
     //private PolygonCollider2D confinerBounds;
     //private bool sceneReloading = false;
 
-
+    public AudioSource sfxAudioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource ambienceAudioSource;
 
     //Singleton instantation
     private static NewPlayer instance;

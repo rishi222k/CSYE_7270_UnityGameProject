@@ -9716,6 +9716,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound1Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound2Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound1.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound2.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound3.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound1.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 78a66586e02814db2a86252e480a19ba, type: 3}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound2.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 005edc17a71ad604aa3e91ea5fc808c4, type: 3}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound2.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f39e2df158f0bd24b8b817dda7a19a26, type: 3}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound2.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 87632ae74d40e0c45a70d31166ebe54f, type: 3}
+    - target: {fileID: 9174657603761212610, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
+      propertyPath: sound3.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 74f4b117d50364f819c1905a428efe02, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb1f619f01dde14a926a1aca1c644e0, type: 3}
 --- !u!4 &175593108306506162 stripped
