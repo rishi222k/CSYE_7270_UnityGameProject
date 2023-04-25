@@ -13,6 +13,7 @@ public class Enemy : PhysicsObject
     private RaycastHit2D leftLedgeRaycastHit;
     private RaycastHit2D rightWallRaycastHit;
     private RaycastHit2D leftWallRaycastHit;
+    [SerializeField] private ParticleSystem particleExplosion;
     [SerializeField] private LayerMask rayCastLayerMask;
 
     [SerializeField] private Vector2 rayCastOffset;
@@ -60,6 +61,9 @@ public class Enemy : PhysicsObject
         if (health <= 0)
         {
             NewPlayer.Instance.sfxAudioSource.PlayOneShot(deathSound, deathSoundVolume);
+            particleExplosion.transform.parent = null;
+            particleExplosion.gameObject.SetActive(true);
+            Destroy(particleExplosion.gameObject, particleExplosion.main.duration);
             Destroy(gameObject);
         }
     }

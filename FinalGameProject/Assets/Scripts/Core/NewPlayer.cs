@@ -24,10 +24,6 @@ public class NewPlayer : PhysicsObject
     public int health = 100;
     [SerializeField] private Vector2 healthBarOrigSize;
 
-    //public GameObject polygonCameraConfiner;
-    //private PolygonCollider2D confinerBounds;
-    //private bool sceneReloading = false;
-
     public AudioSource sfxAudioSource;
     public AudioSource musicAudioSource;
     public AudioSource ambienceAudioSource;
@@ -55,8 +51,6 @@ public class NewPlayer : PhysicsObject
         DontDestroyOnLoad(gameObject);
         gameObject.name = "New Player";
 
-        //confinerBounds = polygonCameraConfiner.GetComponent<PolygonCollider2D>();
-
         healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
         SetSpawnPosition();
@@ -67,15 +61,9 @@ public class NewPlayer : PhysicsObject
     {
         targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, 0);
 
-        /*if (!sceneReloading && !IsPlayerInsideConfiner())
-        {
-            sceneReloading = true;
-            LoadLevel();
-        }*/
-
         if (grounded)
         {
-            jumpsRemaining = 1;
+            jumpsRemaining = 2;
         }
 
 
