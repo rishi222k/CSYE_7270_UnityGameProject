@@ -1085,6 +1085,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab59883603e21f43bd6bcf57960f38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound1:
+  - {fileID: 8300000, guid: 78a66586e02814db2a86252e480a19ba, type: 3}
+  sound1Volume: 0.5
+  sound2:
+  - {fileID: 8300000, guid: 005edc17a71ad604aa3e91ea5fc808c4, type: 3}
+  - {fileID: 8300000, guid: f39e2df158f0bd24b8b817dda7a19a26, type: 3}
+  - {fileID: 8300000, guid: 87632ae74d40e0c45a70d31166ebe54f, type: 3}
+  sound2Volume: 0.5
+  sound3:
+  - {fileID: 8300000, guid: 74f4b117d50364f819c1905a428efe02, type: 3}
+  sound3Volume: 1
+  sound4:
+  - {fileID: 8300000, guid: 14b182c394c66744bbaedb6c4506ed30, type: 3}
+  sound4Volume: 0.7
+  sound5: []
+  sound5Volume: 1
+  sound6: []
+  sound6Volume: 1
+  sound7: []
+  sound7Volume: 1
+  sound8: []
+  sound8Volume: 1
+  sound9: []
+  sound9Volume: 1
+  sound10: []
+  sound10Volume: 1
 --- !u!4 &1548987961302773729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: bdf7fb2cd63ae694f8dcd9ae0d819403, type: 3}

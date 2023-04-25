@@ -155,5 +155,9 @@ public class NewPlayer : PhysicsObject
         SetSpawnPosition();
         UpdateUI();
     }
+    public void HurtAnimation()
+    {
+        animator.SetTrigger("hurt");
+    }
 
 }

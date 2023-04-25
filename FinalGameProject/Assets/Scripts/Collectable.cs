@@ -6,6 +6,8 @@ public class Collectable : MonoBehaviour
 {
     enum ItemType { Coin, Health, Key, Shard } //Creates an ItemType enum (drop down)
     [SerializeField] private ItemType itemType;
+    [SerializeField] private AudioClip collectionSound;
+    [SerializeField] private float collectionSoundVolume = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class Collectable : MonoBehaviour
         // If the player is touching me, print "Collect" in the console
         if (collision.gameObject == NewPlayer.Instance.gameObject)
         {
+            if (collectionSound) NewPlayer.Instance.sfxAudioSource.PlayOneShot(collectionSound, collectionSoundVolume * Random.Range(.8f, 1.4f));
             switch (itemType)
             {
                 case ItemType.Coin:

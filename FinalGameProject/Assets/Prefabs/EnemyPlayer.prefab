@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8282768557304566772}
   - component: {fileID: 8282768557304566775}
   - component: {fileID: 8282768557304566774}
+  - component: {fileID: 801429666180534517}
   m_Layer: 6
   m_Name: EnemyPlayer
   m_TagString: Untagged
@@ -146,3 +147,27 @@ MonoBehaviour:
   rayCastOffset: {x: 1.76, y: 0}
   rayCastLength: 1.79
   attackPower: 15
+  hurtSound: {fileID: 8300000, guid: 662d1f782a5334e138d2699bb2dca85a, type: 3}
+  deathSound: {fileID: 8300000, guid: 56814317db488434ab7d2ddd0b17c4c4, type: 3}
+  hurtSoundVolume: 0.2
+  deathSoundVolume: 1
+--- !u!95 &801429666180534517
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282768557304566776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c60498a1a12a204e9c7389c287ae7cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

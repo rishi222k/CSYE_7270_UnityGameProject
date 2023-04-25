@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
+  collectionSound: {fileID: 8300000, guid: 9eec99a76d7df4a45bf9c565de92875a, type: 3}
+  collectionSoundVolume: 0.5
 --- !u!61 &8587413211957994289
 BoxCollider2D:
   m_ObjectHideFlags: 0
