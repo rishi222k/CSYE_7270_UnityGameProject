@@ -140,9 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
   gravityModifier: 1
-  maxSpeed: 2
+  maxSpeed: 6
   health: 100
   particleExplosion: {fileID: 4437300483272800177}
+  CollectableObject: {fileID: 0}
   rayCastLayerMask:
     serializedVersion: 2
     m_Bits: 51
