@@ -6,6 +6,7 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] private int requiredKeys;
     [SerializeField] private int requiredShards;
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +36,18 @@ public class Gate : MonoBehaviour
             // Open the gate, perform your desired action here, e.g., animation or sound
             Debug.Log("Gate opened!");
             NewPlayer.Instance.UpdateUI();
-            Destroy(gameObject);
+            animator.SetBool("opened", true);
+            StartCoroutine(Destroy());
         }
         else
         {
             Debug.Log("Not enough keys or shards to open the gate.");
         }
+    }
+    public IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
