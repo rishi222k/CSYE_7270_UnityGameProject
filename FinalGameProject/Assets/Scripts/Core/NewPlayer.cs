@@ -11,6 +11,8 @@ public class NewPlayer : PhysicsObject
     [SerializeField] private float attackDuration;
     [SerializeField] private GameObject attackBox;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip deathSound;
+    private bool frozen;
 
     public int attackPower = 25;
     private int jumpsRemaining = 1;
@@ -59,44 +61,45 @@ public class NewPlayer : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-        targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, 0);
-
-        if (grounded)
+        if (!frozen)
         {
-            jumpsRemaining = 2;
-        }
+            targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, 0);
 
+            if (grounded)
+            {
+                jumpsRemaining = 2;
+            }
 
-        // If the player presses "Jump" and there are jumps remaining, set the velocity to a jump power value and decrement jumpsRemaining
-        if (Input.GetButtonDown("Jump") && jumpsRemaining > 0)
-        {
-            velocity.y = jumpPower;
-            jumpsRemaining--;
-        }
+            // If the player presses "Jump" and there are jumps remaining, set the velocity to a jump power value and decrement jumpsRemaining
+            if (Input.GetButtonDown("Jump") && jumpsRemaining > 0)
+            {
+                velocity.y = jumpPower;
+                jumpsRemaining--;
+            }
 
-        //Flip the player's localScale.x if the move speed is greater than .01 or less than -.01
-        if (targetVelocity.x < -.01)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
-        else if (targetVelocity.x > .01)
-        {
-            transform.localScale = new Vector2(1, 1);
-        }
+            //Flip the player's localScale.x if the move speed is greater than .01 or less than -.01
+            if (targetVelocity.x < -.01)
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+            else if (targetVelocity.x > .01)
+            {
+                transform.localScale = new Vector2(1, 1);
+            }
 
-        //If we press "Fire1", then set the attackBox to active. Otherwise, set active to false
-        if (Input.GetButtonDown("Fire1"))
-        {
-            animator.SetTrigger("attack");
-            StartCoroutine(ActivateAttack());
-        }
+            //If we press "Fire1", then set the attackBox to active. Otherwise, set active to false
+            if (Input.GetButtonDown("Fire1"))
+            {
+                animator.SetTrigger("attack");
+                StartCoroutine(ActivateAttack());
+            }
 
-        //Check if player health is smaller than or equal to 0.
-        if (health <= 0)
-        {
-            Die();
+            //Check if player health is smaller than or equal to 0.
+            if (health <= 0)
+            {
+                StartCoroutine(Die());
+            }
         }
-        
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetFloat("velocityY", velocity.y);
         animator.SetBool("grounded", grounded);
@@ -126,17 +129,25 @@ public class NewPlayer : PhysicsObject
         transform.position = GameObject.Find("SpawnLocation").transform.position;
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
+        frozen = true;
+        sfxAudioSource.PlayOneShot(deathSound);
+        animator.SetBool("dead", true);
+        yield return new WaitForSeconds(2);
         LoadLevel();
+        
     }
 
     public void LoadLevel()
     {
+        animator.SetBool("dead", false);
+
         health = 100;
         coinsCollected=0;
         shardsCollected=0;
         keysCollected = 0;
+        frozen = false;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

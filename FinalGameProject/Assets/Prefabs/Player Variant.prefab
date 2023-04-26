@@ -1099,7 +1099,8 @@ MonoBehaviour:
   sound4:
   - {fileID: 8300000, guid: 14b182c394c66744bbaedb6c4506ed30, type: 3}
   sound4Volume: 0.7
-  sound5: []
+  sound5:
+  - {fileID: 8300000, guid: 80ef35450a9edb846b805847bf196349, type: 3}
   sound5Volume: 1
   sound6: []
   sound6Volume: 1

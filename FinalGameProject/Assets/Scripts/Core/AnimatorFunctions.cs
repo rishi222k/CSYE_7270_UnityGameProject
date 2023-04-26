@@ -85,6 +85,6 @@ public class AnimatorFunctions : MonoBehaviour
 
     void PlaySound10()
     {
-        NewPlayer.Instance.sfxAudioSource.PlayOneShot(sound10[Random.Range(0, sound10.Length)], sound5Volume);
+        NewPlayer.Instance.sfxAudioSource.PlayOneShot(sound10[Random.Range(0, sound10.Length)], sound10Volume);
     }
 }
