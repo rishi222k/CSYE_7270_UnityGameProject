@@ -7,6 +7,7 @@ public class MenuHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private string whichScene;
+    [SerializeField] private string whichScene2;
     void Start()
     {
         
@@ -26,5 +27,9 @@ public class MenuHandler : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(whichScene);
+    }
+    public void LoadScene2()
+    {
+        SceneManager.LoadScene(whichScene2);
     }
 }
