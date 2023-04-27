@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Text coinsText;
     public Text shardsText;
     public Text keysText;
+    public Text RescueText;
     public Image healthBar;
 
     //Singleton instantation

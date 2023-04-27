@@ -19,6 +19,7 @@ public class NewPlayer : PhysicsObject
     public int coinsCollected;
     public int shardsCollected;
     public int keysCollected;
+    public int RescueOps;
     //public Text coinsText;
     //public Image healthBar;
 
@@ -121,6 +122,7 @@ public class NewPlayer : PhysicsObject
         GameManager.Instance.coinsText.text = coinsCollected.ToString();
         GameManager.Instance.shardsText.text = shardsCollected.ToString();
         GameManager.Instance.keysText.text = keysCollected.ToString();
+        GameManager.Instance.RescueText.text = RescueOps.ToString();
         GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), GameManager.Instance.healthBar.rectTransform.sizeDelta.y);
     }
 
@@ -147,6 +149,7 @@ public class NewPlayer : PhysicsObject
         coinsCollected=0;
         shardsCollected=0;
         keysCollected = 0;
+        RescueOps = 6;
         frozen = false;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
