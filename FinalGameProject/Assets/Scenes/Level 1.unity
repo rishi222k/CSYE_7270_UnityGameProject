@@ -682,8 +682,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5185758351292150410, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
       propertyPath: requiredShards
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1113889286112354432, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2185114623539264759, guid: d143fa657f62c504aadf27750ac30d03, type: 3}
     - target: {fileID: 1230183529009252026, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
       propertyPath: m_Name
       value: Gate (2)
@@ -2874,9 +2878,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5185758351292150410, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
-      propertyPath: requiredShards
-      value: 2
+      propertyPath: requiredCoins
+      value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: -5185758351292150410, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
+      propertyPath: requiredShards
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113889286112354432, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8796998712252896760, guid: d143fa657f62c504aadf27750ac30d03, type: 3}
     - target: {fileID: 1230183529009252026, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
       propertyPath: m_Name
       value: Gate (3)
@@ -7388,7 +7400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5185758351292150410, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
       propertyPath: requiredShards
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1230183529009252026, guid: fa0556cc11aad9841b954b548eda4d89, type: 3}
       propertyPath: m_Name
